@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "donjayamanne.githistory",
+    "eamodio.gitlens",
+    "dbaeumer.vscode-eslint",
+    "xabikos.reactsnippets",
+    "esbenp.prettier-vscode",
+    "styled-components.vscode-styled-components",
+    "firsttris.vscode-jest-runner"
+  ]
+}
