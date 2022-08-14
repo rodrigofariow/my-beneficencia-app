@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "11.10.0",
+    "@emotion/styled": "11.10.0",
+    "@mui/icons-material": "5.8.4",
+    "@mui/material": "5.10.0",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "13.3.0",
     "@testing-library/user-event": "13.5.0",
@@ -38,6 +42,111 @@
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "*.ts",
+          "*.tsx",
+          "*.js",
+          "*.jsx"
+        ],
+        "rules": {
+          "no-restricted-globals": [
+            "error",
+            "blur",
+            "clearInterval",
+            "close",
+            "closed",
+            "createImageBitmap",
+            "crypto",
+            "customElements",
+            "devicePixelRatio",
+            "event",
+            "external",
+            "find",
+            "focus",
+            "frameElement",
+            "getComputedStyle",
+            "getSelection",
+            "history",
+            "indexedDB",
+            "innerHeight",
+            "innerWidth",
+            "isSecureContext",
+            "length",
+            "location",
+            "matchMedia",
+            "menubar",
+            "moveBy",
+            "moveTo",
+            "name",
+            "navigator",
+            "open",
+            "openDatabase",
+            "origin",
+            "outerHeight",
+            "outerWidth",
+            "pageXOffset",
+            "pageYOffset",
+            "parent",
+            "performance",
+            "postMessage",
+            "print",
+            "releaseEvents",
+            "resizeBy",
+            "resizeTo",
+            "screen",
+            "screenLeft",
+            "screenTop",
+            "screenX",
+            "screenY",
+            "scroll",
+            "scrollbars",
+            "scrollBy",
+            "scrollTo",
+            "scrollX",
+            "scrollY",
+            "self",
+            "setInterval",
+            "setTimeout",
+            "speechSynthesis",
+            "status",
+            "statusbar",
+            "stop",
+            "styleMedia",
+            "toolbar",
+            "top",
+            "visualViewport",
+            "webkitRequestFileSystem",
+            "webkitResolveLocalFileSystemURL",
+            "webkitStorageInfo"
+          ],
+          "no-restricted-imports": [
+            "error",
+            {
+              "paths": [
+                {
+                  "name": "@mui/material",
+                  "message": "Import directly e.g: 'Button from @mui/material/Button'."
+                },
+                {
+                  "name": "@mui/icons-material",
+                  "message": "Import directly e.g: 'AccessAlarm from @mui/icons-material/AccessAlarm'."
+                },
+                {
+                  "name": "@mui/lab",
+                  "message": "Import directly e.g: 'DatePicker from '@mui/lab/DatePicker'."
+                }
+              ],
+              "patterns": [
+                "@mui/*/*/*",
+                "!@mui/material/test-utils/*"
+              ]
+            }
+          ]
+        }
+      }
     ]
   },
   "browserslist": {
