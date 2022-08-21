@@ -22,10 +22,6 @@ describe('utils', () => {
           name: 'Cátia',
           leaveDate: { day: 31, month: 7, year: 2022 },
         },
-        newOccupant: {
-          name: 'Joel',
-          joinDate: { day: 1, month: 8, year: 2022 },
-        },
         expense: edpExpense,
       })
 

@@ -3,13 +3,11 @@ import { Interval } from 'luxon'
 
 export function calculateExpensesWhenReplacingOccupant({
   leavingOccupant,
-  newOccupant,
   expense,
   remainingOccupantsCount,
 }: {
   remainingOccupantsCount: 2 | 3
   leavingOccupant: LeavingOccupant
-  newOccupant: NewOccupant
   expense: EDPExpense | VodafoneExpense
 }): {
   leavingOccupantExpenseInEUR: `${number}`
@@ -60,8 +58,6 @@ type EntryExpense = {
     to: StrictDate
   }
 }
-
-type RemainingOccupant = Occupant
 
 export type LeavingOccupant = Occupant & {
   joinDate?: StrictDate
