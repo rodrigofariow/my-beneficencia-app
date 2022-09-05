@@ -88,6 +88,19 @@ export function calculateEDPExpense({
   } as EDPExpense
 }
 
+export function calculateVodafoneExpense({
+  period,
+  valueInEUR,
+}: Except<EntryExpense, 'description' | 'valueInEUR'> & {
+  valueInEUR: 34.91
+}): VodafoneExpense {
+  return {
+    description: 'Vodafone',
+    period,
+    valueInEUR,
+  } as VodafoneExpense
+}
+
 type EDPExpense = Opaque<EntryExpense, 'EDP'>
 type VodafoneExpense = Opaque<EntryExpense, 'Vodafone'>
 

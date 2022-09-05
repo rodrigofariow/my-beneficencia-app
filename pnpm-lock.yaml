@@ -15,10 +15,12 @@ specifiers:
   '@types/react': 18.0.17
   '@types/react-dom': 18.0.6
   luxon: 3.0.1
+  prettier: 2.7.1
   react: ^18.2.0
   react-dom: ^18.2.0
   react-hook-form: 7.34.2
   react-scripts: 5.0.1
+  ts-pattern: 4.0.5
   type-fest: 2.18.0
   typescript: 4.7.4
   web-vitals: 2.1.4
@@ -54,6 +56,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-hook-form: 7.34.2_react@18.2.0
   react-scripts: 5.0.1_dvxxo3xytuai4wtwqwihhwhpwe
+  ts-pattern: 4.0.5
   type-fest: 2.18.0
   typescript: 4.7.4
   web-vitals: 2.1.4
@@ -73,6 +76,7 @@ dependencies:
 
 devDependencies:
   '@types/luxon': 3.0.0
+  prettier: 2.7.1
 
 packages:
 
@@ -8203,6 +8207,12 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: false
 
+  /prettier/2.7.1:
+    resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
+    dev: true
+
   /pretty-bytes/5.6.0:
     resolution: {integrity: sha512-FFw039TmrBqFK8ma/7OL3sDz/VytdtJr044/QUJtH0wK9lb9jLq9tJyIxUwtQJHwar2BqtiA4iCWSwo9JLkzFg==}
     engines: {node: '>=6'}
@@ -9520,6 +9530,10 @@ packages:
 
   /tryer/1.0.1:
     resolution: {integrity: sha512-c3zayb8/kWWpycWYg87P71E1S1ZL6b6IJxfb5fvsUgsf0S2MVGaDhDXXjDMpdCpfWXqptc+4mXwmiy1ypXqRAA==}
+    dev: false
+
+  /ts-pattern/4.0.5:
+    resolution: {integrity: sha512-Bq44KCEt7JVaNLa148mBCJkcQf4l7jtLEBDuDdeuLynWDA+1a60P4D0rMkqSM9mOKLQbIWUddE9h3XKyKwBeqA==}
     dev: false
 
   /tsconfig-paths/3.14.1:
