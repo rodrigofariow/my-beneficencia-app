@@ -8,7 +8,7 @@ export function calculateExpensesWhenReplacingOccupant({
 }: {
   remainingOccupantsCount: 2 | 3
   leavingOccupant: LeavingOccupant
-  expense: EDPExpense | VodafoneExpense
+  expense: EDPExpense | VodafoneExpense | WaterExpense
 }): {
   leavingOccupantExpenseInEUR: `${number}`
   newOccupantExpenseInEUR: `${number}`
@@ -78,7 +78,7 @@ export type StrictDate = {
 export function calculateEDPExpense({
   period,
   valueInEUR,
-}: Except<EntryExpense, 'description'>): EDPExpense {
+}: Except<EntryExpense, 'description'>) {
   const valueThatRodrigoHasToPayHimselfInEUR = 13.9
 
   return {
@@ -93,7 +93,7 @@ export function calculateVodafoneExpense({
   valueInEUR,
 }: Except<EntryExpense, 'description' | 'valueInEUR'> & {
   valueInEUR: 34.91
-}): VodafoneExpense {
+}) {
   return {
     description: 'Vodafone',
     period,
@@ -101,8 +101,22 @@ export function calculateVodafoneExpense({
   } as VodafoneExpense
 }
 
+export function calculateWaterExpense({
+  period,
+  valueInEUR,
+}: Except<EntryExpense, 'description' | 'valueInEUR'> & {
+  valueInEUR: number
+}) {
+  return {
+    description: 'Water',
+    period,
+    valueInEUR,
+  } as WaterExpense
+}
+
 type EDPExpense = Opaque<EntryExpense, 'EDP'>
 type VodafoneExpense = Opaque<EntryExpense, 'Vodafone'>
+type WaterExpense = Opaque<EntryExpense, 'Vodafone'>
 
 export const toFormattedExpenseValue = (value: number): `${number}` =>
   value.toFixed(3) as `${number}`

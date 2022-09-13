@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { TextFieldControlled } from './components/TextFieldControlled'
-import { calculateExpensesWhenReplacingOccupant, calculateVodafoneExpense } from './utils'
+import { calculateExpensesWhenReplacingOccupant, calculateWaterExpense } from './utils'
 
 const expenseTypes = ['EDP', 'Vodafone'] as const
 
@@ -82,19 +82,21 @@ function App() {
 
 export default App
 
+const expense = calculateWaterExpense({
+  period: {
+    from: { day: 20, month: 7, year: 2022 },
+    to: { day: 23, month: 8, year: 2022 },
+  },
+  valueInEUR: 20.4,
+})
+
 const result = calculateExpensesWhenReplacingOccupant({
   remainingOccupantsCount: 3,
   leavingOccupant: {
     name: 'Cátia',
     leaveDate: { day: 31, month: 7, year: 2022 },
   },
-  expense: calculateVodafoneExpense({
-    period: {
-      from: { day: 23, month: 7, year: 2022 },
-      to: { day: 22, month: 8, year: 2022 },
-    },
-    valueInEUR: 34.91,
-  }),
+  expense,
 })
 
-console.log('calculateExpensesWhenReplacingOccupant vodafone', JSON.stringify(result))
+console.log(`Expense - ${expense.description}`, JSON.stringify(result))
